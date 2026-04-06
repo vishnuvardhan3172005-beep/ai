@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NoteForge AI — Smart Lecture Note Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="ai.css">
+
+</head>
+<body>
+  <header>
+    <div class="logo">Note<span>Forge</span><span class="logo-badge">AI</span></div>
+    <div class="header-tag">Smart Lecture Notes · Powered by Gemini</div>
+  </header>
+  <section class="hero">
+    <p class="hero-eyebrow">✦ Intelligent Academic Assistant</p>
+    <h1>Turn Any Topic Into<br><em>Brilliant</em> Lecture Notes</h1>
+    <p class="hero-sub">Paste your raw transcript or lecture title — and let NoteForge AI craft structured, study-ready notes.</p>
+    <div class="ornament">— ✦ —</div>
+  </section>
+  <div class="main-card">
+    <div class="card">
+      <div class="api-section">
+        <span class="api-label">🔑 Gemini API Key</span>
+        <div class="api-input-wrap">
+          <input type="password" id="apiKeyInput" placeholder="AIzaSy..." autocomplete="off"/>
+          <button class="eye-btn" id="eyeBtn">👁</button>
+        </div>
+        <button class="api-save-btn" id="saveApiBtn">SAVE KEY</button>
+        <span class="api-status inactive" id="apiStatus">● NOT SET</span>
+      </div>
+      <div class="input-section">
+        <div class="input-label">Lecture Input</div>
+        <textarea id="lectureInput" placeholder="Paste your lecture transcript or topic here..."></textarea>
+        <div class="options-row">
+          <div class="select-wrap">
+            <select id="noteStyle">
+              <option value="structured">📋 Structured Notes</option>
+              <option value="cornell">📓 Cornell Method</option>
+              <option value="mindmap">🧠 Mind Map Outline</option>
+              <option value="summary">📄 Summary + Key Points</option>
+              <option value="flashcards">⚡ Flashcard Format</option>
+            </select>
+          </div>
+          <div class="select-wrap">
+            <select id="detailLevel">
+              <option value="concise">Concise</option>
+              <option value="standard" selected>Standard</option>
+              <option value="detailed">Detailed</option>
+            </select>
+          </div>
+          <button class="generate-btn" id="generateBtn">
+            <span id="btnText">Generate Notes</span>
+            <div class="loader" id="loader"></div>
+          </button>
+        </div>
+      </div>
+      <div class="error-box" id="errorBox"></div>
+      <div class="output-section" id="outputSection">
+        <div class="output-header">
+          <span class="output-title">✦ Your Generated Notes</span>
+          <div class="output-actions">
+            <button class="action-btn" id="copyBtn">📋 Copy</button>
+            <button class="action-btn" id="clearBtn">✕ Clear</button>
+          </div>
+        </div>
+        <div class="notes-container" id="notesOutput"></div>
+      </div>
+    </div>
+  </div>
+  <footer>NOTEFORGE AI ©️ 2026 — BUILT FOR SCHOLARS</footer>
+  <script src="ai.js"></script>
+</body>
+</html>
